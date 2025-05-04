@@ -4,7 +4,7 @@ A full-stack application that combines a **React + Tailwind CSS frontend** with 
 
 ---
 
-## 📌 Project Description
+## Project Description
 
 This project is designed to simulate a smart assistant system that helps users navigate or make decisions based on environmental and system data. The **frontend** handles user interaction and display, while the **backend** processes logic, decision-making, and data handling. The architecture is modular and extendable to integrate machine learning models in the future.
 
@@ -26,5 +26,32 @@ Make sure you have the following installed:
 ### 🔸 Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/ashik5757/Hotel-List-Project.git
+cd Hotel-List-Project
+```
+
+Open two terminal or Git Bash in following directory : 
+1. Django (Backend API Server)
+```bash
+cd hotel_list_backend
+```
+2. Node.js (Frontend Server)
+```bash
+cd hotel_list_frontend
+```
+
+<br>
+
+### 🔸 Backend Setup (Django)
+
+
+```bash
+cd hotel_list_backend
+```
+> Skip this, if you're already in this directory:
+
+
+
+### 🔸 Frontend Setup (React + Tailwind CSS)
+
+
