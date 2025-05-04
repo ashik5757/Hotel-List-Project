@@ -131,6 +131,23 @@ cd hotel_list_frontend
     > If you're using MySQL Workbench, then open or create a connection and create a new database. Then Modify the **settings.py** as the connection database name, username and password.
 
 
+    <br>
+
+    Make sure the lines for Local MySQL Database are ***not commented***. You have to remove or comment the lines for Docker as this :
+    ```bash
+    # For Local MySQL Database
+    MYSQL_DATABASE_NAME = 'hotel_lister_db'
+    MYSQL_USER = 'sub-root'
+    MYSQL_PASSWORD = '1234'
+    MYSQL_HOST = 'localhost'
+
+
+    # For Docker FIle
+    # MYSQL_DATABASE_NAME = os.environ.get('DB_NAME', 'hotel_lister_db')
+    # MYSQL_USER = os.environ.get('DB_USER', 'sub-root')
+    # MYSQL_PASSWORD = os.environ.get('DB_PASSWORD', '1234')
+    # MYSQL_HOST = os.getenv("DB_HOST", "localhost")
+    ```
 
 
 4. **Apply database migrations**
