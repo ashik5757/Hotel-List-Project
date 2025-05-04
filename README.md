@@ -58,9 +58,47 @@ pip install -r requirements.txt
 ```
 
 3. Create the Database in MySQL
+
+- Log in to the mysql client :
+
 ```bash
-CREATE DATABASE database_name;
+mysql -u root -p
 ```
+
+> Note : If the root user don't have any password, then Press **Enter** without typing the password.
+
+- Create a database :
+
+```bash
+CREATE DATABASE hotel_lister_db;
+```
+
+- Modify the **settings.py** as followings :
+
+
+```bash
+DATABASE_NAME = 'hotel_lister_db'
+DATABASE_USER = 'root'
+DATABASE_PASSWORD = '' 
+```
+> Note : If the root user have password, then put the password in the ***settings.py***. If you use a another user, then change the user and password accordingly.
+
+Example:
+
+```bash
+DATABASE_NAME = 'hotel_lister_db'
+DATABASE_USER = 'sub-root'
+DATABASE_PASSWORD = '1234'
+```
+
+
+> If you're using MySQL Workbench, then open or create a connection and create a new database. Then Modify the **settings.py** as the connection database name, username and password.
+
+
+
+
+Find the  
+
 
 4. Apply database migrations
 ```bash

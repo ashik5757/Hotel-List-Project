@@ -13,6 +13,15 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 
+
+
+# Modify these values according to your database configuration
+DATABASE_NAME = 'hotel_lister_db'
+DATABASE_USER = 'sub-root'
+DATABASE_PASSWORD = '1234'
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -82,13 +91,17 @@ WSGI_APPLICATION = 'hotel_lister.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hotel_lister_db',
+        'NAME': DATABASE_NAME,
         'HOST': 'localhost',
-        'USER': 'sub-root',
-        'PASSWORD': '1234',
+        'USER': DATABASE_USER,
+        'PASSWORD': DATABASE_PASSWORD,
         'PORT':'3306'
     }
 }
