@@ -275,7 +275,7 @@ For more documentations : "https://developer.hotelbeds.com/documentation/getting
 
 ![image](https://github.com/user-attachments/assets/f56e99ff-6df7-4b62-b61c-12b8090713b4)
 
-- Light Mode: 
+- Dark Mode: 
 
 ![image](https://github.com/user-attachments/assets/45b67a28-9ed8-4364-a61e-14c056a7b0da)
 
