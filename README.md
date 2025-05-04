@@ -319,6 +319,16 @@ cd Hotel-List-Project
     <br>
     Frontend Server can access through browser at : http://localhost:3000
 
+    > ***NOTE*** : It could restart few times while build. And aslo make sure docker is running before building it.
+
+- Only for starting :
+    ```bash
+    docker-compose up
+    ```
+    Press ***Ctrl+c*** to stop all the contaner in the terminal.
+
+
+
 ### 🔸 Container Remove :
 - Run to remove all the container :
 
@@ -339,7 +349,7 @@ cd Hotel-List-Project
 <br>
 
 
-## 🛠️ API Testing in Django (Locally)
+## 🛠️ API Testing in Django
 
 - POST : http://localhost:8000/accounts/login/ 
 
