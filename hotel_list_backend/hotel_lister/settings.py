@@ -16,17 +16,20 @@ from datetime import timedelta
 
 
 # Modify these values according to your database configuration
-DATABASE_NAME = 'hotel_lister_db'
-DATABASE_USER = 'sub-root'
-DATABASE_PASSWORD = '1234'
+MYSQL_DATABASE_NAME = 'hotel_lister_db'
+MYSQL_USER = 'sub-root'
+MYSQL_PASSWORD = '1234'
 
+MYSQL_HOST = 'localhost'
 
 
 # For Docker FIle
 
-# DATABASE_NAME = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
-# DATABASE_USER = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
-# DATABASE_PASSWORD = os.environ.get('MYSQL_PASSWORD', '1234')
+# MYSQL_NAME = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
+# MYSQL_USER = os.environ.get('MYSQL_USER', 'sub-root')
+# MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD', '1234')
+# MYSQL_HOST = 'db'
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -105,10 +108,10 @@ WSGI_APPLICATION = 'hotel_lister.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': DATABASE_NAME,
-        'HOST': 'localhost',
-        'USER': DATABASE_USER,
-        'PASSWORD': DATABASE_PASSWORD,
+        'NAME': MYSQL_DATABASE_NAME,
+        'HOST': MYSQL_HOST,
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_USER,
         'PORT':'3306'
     }
 }

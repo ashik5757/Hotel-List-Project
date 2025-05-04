@@ -77,18 +77,18 @@ CREATE DATABASE hotel_lister_db;
 
 
 ```bash
-DATABASE_NAME = 'hotel_lister_db'
-DATABASE_USER = 'root'
-DATABASE_PASSWORD = '' 
+MYSQL_DATABASE_NAME = 'hotel_lister_db'
+MYSQL_USER = 'sub-root'
+MYSQL_PASSWORD = '1234'
 ```
 > Note : If the root user have password, then put the password in the ***settings.py***. If you use a another user, then change the user and password accordingly.
 
 Example:
 
 ```bash
-DATABASE_NAME = 'hotel_lister_db'
-DATABASE_USER = 'sub-root'
-DATABASE_PASSWORD = '1234'
+MYSQL_DATABASE_NAME = 'hotel_lister_db'
+MYSQL_USER = 'sub-root'
+MYSQL_PASSWORD = '1234'
 ```
 
 
@@ -164,12 +164,25 @@ Frontend Serevr can access through browser at : http://localhost:3000
 
 ## 🛠️ Run in DOCKER
 
+1. Clone and open root directory :
+```bash
+git clone https://github.com/ashik5757/Hotel-List-Project.git
+cd Hotel-List-Project
+```
+
+2. Open ***docker-compose.yml*** and modify as follwing:
+
+If the root password have empty
+
 
 
 <br>
 
 
 ## 🛠️ API Testing in Django
+
+
+
 
 
 <br>
