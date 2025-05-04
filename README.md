@@ -44,13 +44,30 @@ cd hotel_list_frontend
 
 ### 🔸 Backend Setup (Django)
 
-
+1. Open Django Diretory
 ```bash
 cd hotel_list_backend
 ```
-> Skip this, if you're already in this directory:
+> Note: Skip this, if you're already in this directory:
 
+2. Install all the requirements.
+```bash
+pip install -r requirements.txt
+```
 
+3. Create the Database in MySQL
+```bash
+CREATE DATABASE database_name;
+```
+
+4. Apply database migrations
+```bash
+python manage.py migrate   
+```
+5. Run the Server
+```bash        
+python manage.py runserver
+```
 
 ### 🔸 Frontend Setup (React + Tailwind CSS)
 
