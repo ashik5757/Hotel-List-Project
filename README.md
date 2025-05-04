@@ -1,12 +1,47 @@
 # Hotel List Project
 
-A full-stack application that combines a **React + Tailwind CSS frontend** with a **Django backend** to assist users in smart decision-making and navigation. The system processes data in real-time and provides guidance to users through a clean and interactive interface.
+A simple Hotel List Application that used frontend as **Next.js** with **Django** as backend to list and bookmark the hotels for the users. 
 
 ---
 
 ## Project Description
+This Hotel List project have used backend as Django to build a API endpoints for frontend using an external hotel API("https://developer.hotelbeds.com/"). The frontend have developed in Next.Js with some React components and Tailwind CSS to design the UI. 
 
-This project is designed to simulate a smart assistant system that helps users navigate or make decisions based on environmental and system data. The **frontend** handles user interaction and display, while the **backend** processes logic, decision-making, and data handling. The architecture is modular and extendable to integrate machine learning models in the future.
+
+The web application have the following funtionality:
+
+- **Stack** :
+    - *Frontend* : Next.js
+    - *Backend* : Django
+    - *Database* : MySQL (Used Django ORM to build the database)
+
+
+- **Authentication** : 
+    - SignUp
+    - Login
+    - Logout
+
+    > Used JWT to generates refresh token and access token. Both token have been used in the authenticated process.
+
+- **Search & Filters** :
+    - *Seach by Location* : Anyone can search the hotels from the homepage, but to view the results user need to sign in.
+    - *Filters* : Authenticated users can filter the hotels based on price range, star rating of hotels and rooms, order the hotels based on price. User can filter the hotels by using check in and check out date, the number of rooms, adults and childrens.
+
+    - View Details : Vissible button but not Implemnented yet.
+
+    > Since there is no data about the Swimming pool in the source API, so it cant't be possible to filter by Pool Available.
+
+
+- **Bookmark Feature** :
+    - *Add or remove* : User can bookmark any searched hotels. Also later it can be removed from the bookmark.
+    - *View Bookmark* : User can view their bookmark in a page.
+    - *Search & Filter* : User can search by hotels name and can filter the hotels in bookmark list. 
+
+- **Appearance Toggle** : User can change the Appearance of the UI between dark and light mode using a button.
+
+
+- **API & Database** : For the frontend, API endpoints have created in Django. These Django API endpoints can fetch and update the data to the MySQL database and have the fetch function of some external API(""https://developer.hotelbeds.com/").
+
 
 ---
 
@@ -179,9 +214,23 @@ If the root password have empty
 <br>
 
 
-## 🛠️ API Testing in Django
+## 🛠️ API Testing in Django (Locally)
 
+- POST : http://localhost:8000/accounts/login/ 
 
+- POST : http://localhost:8000/accounts/signup/
+
+- POST : http://localhost:8000/accounts/logout/
+
+- POST : http://localhost:8000/hotels/search/
+
+- GET : http://localhost:8000/bookmarks/
+
+- GET : http://localhost:8000/bookmarks/search/
+
+- POST : http://localhost:8000/bookmarks/
+
+- DELETE : http://localhost:8000/bookmarks/
 
 
 
@@ -197,9 +246,20 @@ If the root password have empty
 
 ## 🛠️ Data Handeling & Source API
 
-Option A: Manual Data Handling
+### Option B (From a API source):
 
-This project uses local file/database handling through Django’s built-in ORM and SQLite database. Data is not dependent on external services or cloud databases, making it easier to test and deploy locally.
+In this project, multiple API endpoints have used from "https://developer.hotelbeds.com/". Fetched the hotel code, hotel description, hotel address, hotel city, hotel country, min_rate, max rate, rating, currancy. Avg price rate was calculated from minimum and maximum price. Also many query parameter have passed to filter the hotels. All the possible errors have been handled through exception handling and used Asynchronous Tasks in frontend to prevent UI blocking.
+
+### Source API Endpoints :
+
+HOTELBEDS_HOTEL_API_URL : "https://api.test.hotelbeds.com/hotel-api/1.0/hotels"
+HOTELBEDS_HOTEL_CONTENT_API_URL : "https://api.test.hotelbeds.com/hotel-content-api/1.0/hotels"
+HOTELBEDS_HOTEL_BOOKING_API_URL : "https://api.test.hotelbeds.com/hotel-api/1.0/hotels"
+
+
+
+
+For more documentations : "https://developer.hotelbeds.com/documentation/getting-started/"
 
 <br>
 
@@ -291,3 +351,7 @@ This project uses local file/database handling through Django’s built-in ORM a
 
 
 ## 🛠️ AI Tools Used
+
+- ChatGPT : Used to understand the structer of the Next.js, react component and Tailwind CSS. Also used for understanding the class based ORM in Django. Used to solve the problem related dockerizations. 
+
+- GitHub Copilot : Used the model Claude 3.7 Sonnet to generates the UI templete and react components. Also used to understand the API integration related problems.
