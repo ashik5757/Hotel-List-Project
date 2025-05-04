@@ -21,6 +21,8 @@ The web application have the following funtionality:
     - Login
     - Logout
 
+    <br>
+
     > Used JWT to generates refresh token and access token. Both token have been used in the authenticated process.
 
 - **Search & Filters** :
@@ -80,18 +82,18 @@ cd hotel_list_frontend
 
 ### 🔸 Backend Setup (Django)
 
-1. Open Django Diretory
+1. **Open Django Diretory**
     ```bash
     cd hotel_list_backend
     ```
     > Note: Skip this, if you're already in this directory:
 
-2. Install all the requirements.
+2. **Install all the requirements**.
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Create the Database in MySQL
+3. **MySQL Database create and configuration**
 
 - Log in to the mysql client :
 
@@ -101,7 +103,7 @@ cd hotel_list_frontend
 
     > Note : If the root user don't have any password, then Press **Enter** without typing the password.
 
-- Create a database :
+- Create a mysql database :
 
     ```bash
     CREATE DATABASE hotel_lister_db;
@@ -131,7 +133,7 @@ cd hotel_list_frontend
 
 
 
-4. Apply database migrations
+4. **Apply database migrations**
 
     > Note : Please exit from mysql client in terminal before executing No. 4 command. (Type ***exit*** and press enrter)
 
@@ -142,7 +144,7 @@ cd hotel_list_frontend
 
 
 
-5. Run the Server
+5. **Run the Server**
     ```bash        
     python manage.py runserver
     ```
@@ -152,17 +154,17 @@ cd hotel_list_frontend
 ---
 ### 🔸 Frontend Setup (React + Tailwind CSS)
 
-1. Open NodeJs Frontend Diretory
+1. **Open NodeJs Frontend Diretory**
 ```bash
 cd hotel_list_frontend
 ```
 
-2. Install all frontend dependencies
+2. **Install all frontend dependencies**
 
 ```bash
 npm install       
 ```
-3. Run the frontend server
+3. **Run the frontend server**
 
 ```bash
 npm run dev
