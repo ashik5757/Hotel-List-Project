@@ -51,10 +51,9 @@ The web application have the following funtionality:
 
 Make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v16 or newer)
-- [Python](https://www.python.org/downloads/) (3.8 or newer)
+- [Node.js](https://nodejs.org/) (v18 or newer)
+- [Python](https://www.python.org/downloads/) (3.11 or newer)
 - [pip](https://pip.pypa.io/en/stable/)
-- [virtualenv](https://virtualenv.pypa.io/) (optional but recommended)
 
 ---
 
