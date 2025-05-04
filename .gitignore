@@ -1,0 +1,19 @@
+# OS & Editor Junk
+.DS_Store
+Thumbs.db
+*.log
+
+# Global environment and Python/Node build folders
+.env
+*.env
+*.log
+*.bak
+
+.vscode/
+
+
+# Ignore Python and Node virtual environments if at root
+venv/
+env/
+.venv/
+node_modules/
