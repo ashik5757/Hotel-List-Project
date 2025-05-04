@@ -40,7 +40,7 @@ The web application have the following funtionality:
 - **Appearance Toggle** : User can change the Appearance of the UI between dark and light mode using a button.
 
 
-- **API & Database** : For the frontend, API endpoints have created in Django. These Django API endpoints can fetch and update the data to the MySQL database and have the fetch function of some external API(""https://developer.hotelbeds.com/").
+- **API & Database** : For the frontend, API endpoints have created in Django. These Django API endpoints can fetch and update the data to the MySQL database and have the fetch function of some external API (https://developer.hotelbeds.com/).
 
 
 ---
@@ -81,71 +81,71 @@ cd hotel_list_frontend
 ### 🔸 Backend Setup (Django)
 
 1. Open Django Diretory
-```bash
-cd hotel_list_backend
-```
-> Note: Skip this, if you're already in this directory:
+    ```bash
+    cd hotel_list_backend
+    ```
+    > Note: Skip this, if you're already in this directory:
 
 2. Install all the requirements.
-```bash
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 3. Create the Database in MySQL
 
 - Log in to the mysql client :
 
-```bash
-mysql -u root -p
-```
+    ```bash
+    mysql -u root -p
+    ```
 
-> Note : If the root user don't have any password, then Press **Enter** without typing the password.
+    > Note : If the root user don't have any password, then Press **Enter** without typing the password.
 
 - Create a database :
 
-```bash
-CREATE DATABASE hotel_lister_db;
-```
+    ```bash
+    CREATE DATABASE hotel_lister_db;
+    ```
 
 - Modify the **settings.py** as followings :
 
 
-```bash
-MYSQL_DATABASE_NAME = 'hotel_lister_db'
-MYSQL_USER = 'sub-root'
-MYSQL_PASSWORD = '1234'
-```
-> Note : If the root user have password, then put the password in the ***settings.py***. If you use a another user, then change the user and password accordingly.
+    ```bash
+    MYSQL_DATABASE_NAME = 'hotel_lister_db'
+    MYSQL_USER = 'sub-root'
+    MYSQL_PASSWORD = '1234'
+    ```
+    > Note : If the root user have password, then put the password in the ***settings.py***. If you use a another user, then change the user and password accordingly.
 
-Example:
+    Example:
 
-```bash
-MYSQL_DATABASE_NAME = 'hotel_lister_db'
-MYSQL_USER = 'sub-root'
-MYSQL_PASSWORD = '1234'
-```
+    ```bash
+    MYSQL_DATABASE_NAME = 'hotel_lister_db'
+    MYSQL_USER = 'sub-root'
+    MYSQL_PASSWORD = '1234'
+    ```
 
 
-> If you're using MySQL Workbench, then open or create a connection and create a new database. Then Modify the **settings.py** as the connection database name, username and password.
+    > If you're using MySQL Workbench, then open or create a connection and create a new database. Then Modify the **settings.py** as the connection database name, username and password.
 
 
 
 
 4. Apply database migrations
 
-> Note : Please exit from mysql client in terminal before executing No. 4 command. (Type ***exit*** and press enrter)
+    > Note : Please exit from mysql client in terminal before executing No. 4 command. (Type ***exit*** and press enrter)
 
-```bash
-python manage.py migrate   
-```
+    ```bash
+    python manage.py migrate   
+    ```
 
 
 
 
 5. Run the Server
-```bash        
-python manage.py runserver
-```
+    ```bash        
+    python manage.py runserver
+    ```
 
 <br>
 
@@ -199,14 +199,17 @@ Frontend Serevr can access through browser at : http://localhost:3000
 ## 🛠️ Run in DOCKER
 
 1. Clone and open root directory :
-```bash
-git clone https://github.com/ashik5757/Hotel-List-Project.git
-cd Hotel-List-Project
-```
+    ```bash
+    git clone https://github.com/ashik5757/Hotel-List-Project.git
+    cd Hotel-List-Project
+    ```
 
 2. Open ***docker-compose.yml*** and modify as follwing:
 
-If the root password have empty
+Updating the instruction
+
+
+<!-- If the root password have empty -->
 
 
 
