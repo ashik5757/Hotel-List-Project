@@ -71,7 +71,7 @@ Open two terminal or Git Bash in following directory :
 ```bash
 cd hotel_list_backend
 ```
-2. Node.js (Frontend Server)
+2. Next.js (Frontend Server)
 ```bash
 cd hotel_list_frontend
 ```
