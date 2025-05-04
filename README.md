@@ -262,14 +262,22 @@ This project uses local file/database handling through Django’s built-in ORM a
 
 
 
+![image](https://github.com/user-attachments/assets/b3e51187-851b-45d2-bf33-216ec2668c7f)
+
+
+
 
 ![image](https://github.com/user-attachments/assets/6d7bf9d4-6347-401d-8d77-11f4fe997224)
 
 
 
+![image](https://github.com/user-attachments/assets/71d80070-fed3-4f51-9713-00731741b983)
+
 
 ![image](https://github.com/user-attachments/assets/e955300e-1f6d-4c76-8892-09828b798652)
 
+
+![image](https://github.com/user-attachments/assets/e022b96d-72c5-4ff9-ae00-2f94b060ca7e)
 
 
 ![image](https://github.com/user-attachments/assets/caa0b357-248c-4b5a-9c59-bafb601513ad)
