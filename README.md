@@ -10,7 +10,7 @@ This project is designed to simulate a smart assistant system that helps users n
 
 ---
 
-## 🛠️ Setup and Installation Instructions
+## 🛠️ Setup and Installation Instructions (For Locally)
 
 ### 🔸 Prerequisites
 
@@ -42,6 +42,8 @@ cd hotel_list_frontend
 
 <br>
 
+---
+
 ### 🔸 Backend Setup (Django)
 
 1. Open Django Diretory
@@ -64,11 +66,61 @@ CREATE DATABASE database_name;
 ```bash
 python manage.py migrate   
 ```
+
 5. Run the Server
 ```bash        
 python manage.py runserver
 ```
 
+<br>
+
+---
 ### 🔸 Frontend Setup (React + Tailwind CSS)
 
 
+<br>
+
+---
+### 🔸 Running Application on browser
+http://localhost:8000
+<br>
+http://localhost:3000
+
+
+
+<br>
+
+
+## 🛠️ Run in DOCKER
+
+
+
+<br>
+
+
+## 🛠️ API Testing in Django
+
+
+<br>
+
+
+## 🛠️ Database Schemes
+
+
+
+<br>
+
+
+## 🛠️ Data Handeling & Source API
+
+
+<br>
+
+
+## 🛠️ Screenshot of the Functionallity
+
+
+<br>
+
+
+## 🛠️ AI Tools Used
