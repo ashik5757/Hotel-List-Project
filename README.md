@@ -114,8 +114,8 @@ cd hotel_list_frontend
 
     ```bash
     MYSQL_DATABASE_NAME = 'hotel_lister_db'
-    MYSQL_USER = 'sub-root'
-    MYSQL_PASSWORD = '1234'
+    MYSQL_USER = 'root'
+    MYSQL_PASSWORD = ''
     ```
     > Note : If the root user have password, then put the password in the ***settings.py***. If you use a another user, then change the user and password accordingly.
 
@@ -200,18 +200,122 @@ Frontend Server can access through browser at : http://localhost:3000
 
 ## 🛠️ Run in DOCKER
 
-1. Clone and open root directory :
+### 🔸 Prerequisites
+
+Make sure you have installed Docker in your device : [Docker](https://www.docker.com/get-started/)
+
+ 
+
+### 🔸 Clone and open root directory :
+
+```bash
+git clone https://github.com/ashik5757/Hotel-List-Project.git
+cd Hotel-List-Project
+```
+
+
+### 🔸 Open ***docker-compose.yml*** and modify as follwing :
+
+- ***Find the follwing lines and replace the root password with your MySQL root password.***
+
     ```bash
-    git clone https://github.com/ashik5757/Hotel-List-Project.git
-    cd Hotel-List-Project
+    environment:
+        MYSQL_DATABASE: hotel_lister_db_docker
+        MYSQL_USER: hotel_app_user
+        MYSQL_PASSWORD: 1234
+        MYSQL_ROOT_PASSWORD: REPLACE_WITH_YOUR_MYSQL_ROOT_PASSWORD
     ```
 
-2. Open ***docker-compose.yml*** and modify as follwing:
+    Example:
+    ```bash
+      MYSQL_ROOT_PASSWORD: 12345678
+    ```
 
-Updating the instruction
+    > Note : **No Need** to change the other attributes like MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD
+    
+    <br>
+
+- ***If your root password is empty, then follow as this :***
+
+    ```bash
+    environment:
+      MYSQL_DATABASE: hotel_lister_db_docker
+      MYSQL_USER: hotel_app_user
+      MYSQL_PASSWORD: 1234
+      # MYSQL_ROOT_PASSWORD: Your Can remove this attribute 
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ```
 
 
-<!-- If the root password have empty -->
+### 🔸 Modify ***settings.py*** as following :
+
+
+- Remove or Comment the following lines:
+
+    ```bash
+    # For Local MySQL Database
+    # MYSQL_DATABASE_NAME = 'hotel_lister_db'
+    # MYSQL_USER = 'sub-root'
+    # MYSQL_PASSWORD = '1234'
+    # MYSQL_HOST = 'localhost'
+    ```
+
+
+- Ensure the following lines are ***not commented***:
+
+    ```bash
+    # For Docker FIle
+    MYSQL_DATABASE_NAME = os.environ.get('DB_NAME', 'hotel_lister_db')
+    MYSQL_USER = os.environ.get('DB_USER', 'sub-root')
+    MYSQL_PASSWORD = os.environ.get('DB_PASSWORD', '1234')
+    MYSQL_HOST = os.getenv("DB_HOST", "localhost")
+    ```
+
+### 🔸 Composer Build :
+
+- Stop the MySQL service if it is running (*Ohterwise skip this step*):
+
+    > open Services > FInd MySQL80 and stop the service.
+- Open *terminal* in root directory :
+
+    > NOTE : Make sure you're in the root directory : 
+
+    ```bash
+    Hotel-List-Project/           # root 
+    ├── docker-compose.yml
+    ├── hotel_list_backend/       # Django (Backend)
+    │   ├── Dockerfile
+    │   └── ...
+    └── hotel_list_frontend/      # Next.js (frontend)
+        ├── Dockerfile
+        └── ...
+    ```
+
+
+- Run to ***build*** :
+
+    ```bash
+    docker-compose up --build
+    ```
+
+    Django Server will be run at : http://localhost:8000
+    <br>
+    Frontend Server can access through browser at : http://localhost:3000
+
+### 🔸 Container Remove :
+- Run to remove all the container :
+
+    ```bash
+    docker-compose down
+    ```
+
+- Run to Remove Volume to prevent any Django related issues :
+    ```bash
+    docker volume rm hotel-list-project_mysql_data
+    ```
+
+
+
 
 
 

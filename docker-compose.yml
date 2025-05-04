@@ -1,49 +1,54 @@
-version: "3.9"
+version: '3.9'
 
 services:
-  django_backend:
-    build:
-      context: ./hotel_list_backend
-    container_name: hotel_django_backend
-    command: >
-      bash -c "python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
     environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=sub-root
-      - MYSQL_PASSWORD=1234
-      - MYSQL_DATABASE=hotel_lister_db
-    ports:
-      - "8000:8000"
-    volumes:
-      - ./hotel_list_backend:/app
-    depends_on:
-      - db
-
-  node_frontend:
-    build:
-      context: ./hotel_list_frontend
-    container_name: hotel_node_frontend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./hotel_list_frontend:/app
-    depends_on:
-      - django_backend
-
-  db:
-    image: mysql:8
-    container_name: hotel_mysql_db
-    environment:
-      MYSQL_DATABASE: hotel_lister_db
-      MYSQL_USER: sub-root
+      MYSQL_DATABASE: hotel_lister_db_docker
+      MYSQL_USER: hotel_app_user
       MYSQL_PASSWORD: 1234
-      MYSQL_ROOT_PASSWORD: your_root_password
-      # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"     # This allows empty root password
+      MYSQL_ROOT_PASSWORD: REPLACE_WITH_YOUR_MYSQL_ROOT_PASSWORD
+      # MYSQL_ALLOW_EMPTY_PASSWORD: "yes"     # IF YOU WANT TO ALLOW EMPTY PASSWORDS
     ports:
       - "3306:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - mysql_data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+
+  django:
+    build:
+      context: ./hotel_list_backend
+    container_name: django_app
+    restart: unless-stopped
+    volumes:
+      - ./hotel_list_backend:/app
+      - /app/node_modules
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    environment:
+      - DB_NAME=hotel_lister_db_docker
+      - DB_USER=hotel_app_user
+      - DB_PASSWORD=1234
+      - DB_HOST=mysql
+
+  nextjs:
+    build:
+      context: ./hotel_list_frontend
+    container_name: nextjs_app
+    restart: unless-stopped
+    volumes:
+      - ./hotel_list_frontend:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - django
+    environment:
+      - NEXT_PUBLIC_API_URL=http://django:8000
 
 volumes:
-  db_data:
+  mysql_data:

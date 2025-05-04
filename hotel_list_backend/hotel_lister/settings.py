@@ -15,20 +15,18 @@ from datetime import timedelta
 
 
 
-# Modify these values according to your database configuration
-MYSQL_DATABASE_NAME = 'hotel_lister_db'
-MYSQL_USER = 'sub-root'
-MYSQL_PASSWORD = '1234'
-
-MYSQL_HOST = 'localhost'
+# For Local MySQL Database
+# MYSQL_DATABASE_NAME = 'hotel_lister_db'
+# MYSQL_USER = 'sub-root'
+# MYSQL_PASSWORD = '1234'
+# MYSQL_HOST = 'localhost'
 
 
 # For Docker FIle
-
-# MYSQL_NAME = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
-# MYSQL_USER = os.environ.get('MYSQL_USER', 'sub-root')
-# MYSQL_PASSWORD = os.environ.get('MYSQL_PASSWORD', '1234')
-# MYSQL_HOST = 'db'
+MYSQL_DATABASE_NAME = os.environ.get('DB_NAME', 'hotel_lister_db')
+MYSQL_USER = os.environ.get('DB_USER', 'sub-root')
+MYSQL_PASSWORD = os.environ.get('DB_PASSWORD', '1234')
+MYSQL_HOST = os.getenv("DB_HOST", "localhost")
 
 
 
