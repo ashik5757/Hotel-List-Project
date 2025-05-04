@@ -154,7 +154,7 @@ cd hotel_list_frontend
 ---
 ### 🔸 Frontend Setup (React + Tailwind CSS)
 
-1. **Open NodeJs Frontend Diretory**
+1. **Open Next.js Frontend Diretory**
 ```bash
 cd hotel_list_frontend
 ```
@@ -192,7 +192,7 @@ npm run dev
 
 Django Server will be run at : http://localhost:8000
 <br>
-Frontend Serevr can access through browser at : http://localhost:3000
+Frontend Server can access through browser at : http://localhost:3000
 
 
 
