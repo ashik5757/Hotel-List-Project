@@ -97,13 +97,16 @@ DATABASE_PASSWORD = '1234'
 
 
 
-Find the  
-
-
 4. Apply database migrations
+
+> Note : Please exit from mysql client in terminal before executing No. 4 command. (Type ***exit*** and press enrter)
+
 ```bash
 python manage.py migrate   
 ```
+
+
+
 
 5. Run the Server
 ```bash        
@@ -115,19 +118,49 @@ python manage.py runserver
 ---
 ### 🔸 Frontend Setup (React + Tailwind CSS)
 
+1. Open NodeJs Frontend Diretory
+```bash
+cd hotel_list_frontend
+```
+
+2. Install all frontend dependencies
+
+```bash
+npm install       
+```
+3. Run the frontend server
+
+```bash
+npm run dev
+```
 
 <br>
 
 ---
 ### 🔸 Running Application on browser
-http://localhost:8000
+
+> Note : Run two server at different terminal.
+
+Django:
+
+```bash        
+python manage.py runserver
+```
+
+NodeJs:
+
+```bash
+npm run dev
+```
+
+
+Django Server will be run at : http://localhost:8000
 <br>
-http://localhost:3000
+Frontend Serevr can access through browser at : http://localhost:3000
 
 
 
 <br>
-
 
 ## 🛠️ Run in DOCKER
 
@@ -151,6 +184,9 @@ http://localhost:3000
 
 ## 🛠️ Data Handeling & Source API
 
+Option A: Manual Data Handling
+
+This project uses local file/database handling through Django’s built-in ORM and SQLite database. Data is not dependent on external services or cloud databases, making it easier to test and deploy locally.
 
 <br>
 

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 from datetime import timedelta
 
@@ -20,6 +20,13 @@ DATABASE_NAME = 'hotel_lister_db'
 DATABASE_USER = 'sub-root'
 DATABASE_PASSWORD = '1234'
 
+
+
+# For Docker FIle
+
+# DATABASE_NAME = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
+# DATABASE_USER = os.environ.get('MYSQL_DATABASE', 'hotel_lister_db')
+# DATABASE_PASSWORD = os.environ.get('MYSQL_PASSWORD', '1234')
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
