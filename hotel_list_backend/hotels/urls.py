@@ -18,11 +18,5 @@ urlpatterns = [
     path('hotels-details/', views.HotelDetailsView.as_view(), name='hotels_deatails_api'),
     path('hotels/search/', views.HotelSearchView.as_view(), name='hotels_search_api'),
 
-
-
-    # path('search-hotels/', views.HotelSearchView.as_view(), name='hotels_search_api'),
-    # path('hotels-details/', views.HotelDetailsView.as_view(), name='hotels_deatails_api'),
-    # path('search-hotels-geocode/', views.HotelSearchByGeocodeView.as_view(), name='hotels_search_geocode_api'),
-
  
 ]

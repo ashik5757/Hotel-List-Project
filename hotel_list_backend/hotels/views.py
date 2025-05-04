@@ -17,12 +17,6 @@ from datetime import datetime, timedelta
 def HomepageView(request):
     return render(request, 'index.html')
 
-# def HotelListView(request):
-#     return render(request, 'hotel_list.html')
-
-# def BookmarkListView(request):
-#     return render(request, 'bookmark_list.html')
-
 
 class SignUpAPIView(APIView):
 
@@ -88,29 +82,8 @@ class HotelListView(APIView):
             return Response({"error": hotels_json["error"]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         all_hotels_list = hotels_json['hotels']
-
-        all_hotels = []
-
-        for hotel in all_hotels_list:
-
-            hotel_rating = hotel.get('S2C','N/A')
-            email = hotel.get('email', 'N/A')
-
-
-            # all_hotels.append({
-            #     'name': hotel['name']['content'],
-            #     'description': hotel['description']['content'],
-            #     'countryCode': hotel['countryCode'],
-            #     'address': hotel['address']['content'],
-            #     'city': hotel['city']['content'],
-            #     'email': email,
-            #     'latitude': hotel['coordinates']['latitude'],
-            #     'longitude': hotel['coordinates']['longitude'],
-            #     'hotel_id': hotel['code'],
-            #     'rating': hotel_rating,
-            # })            
         
-        return Response(hotels_json, status=status.HTTP_200_OK)
+        return Response(all_hotels_list, status=status.HTTP_200_OK)
 
 
 
@@ -405,136 +378,3 @@ class BookmarkListView(APIView):
             return Response({"error": "Bookmark not found."}, status=status.HTTP_404_NOT_FOUND)
 
     
-
-
-
-
-
-
-
-
-# class HotelSearchView(APIView):
-#     def get(self, request):
-#         location = request.query_params.get("location")
-#         if not location:
-#             return Response({"error": "Location parameter is required."}, status=status.HTTP_400_BAD_REQUEST)
-
-#         hotels = fetch_hotels_by_location(location)
-
-#         all_hotels = hotels['hotels']['hotels']
-
-#         # for hotel in all_hotels:
-
-#         # print(len(hotels['hotels']['hotels']))
-#         print(all_hotels[0])
-
-#         if "error" in hotels:
-#             return Response({"error": hotels["error"]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-#         return Response(hotels, status=status.HTTP_200_OK)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Amedeus API
-# class HotelSearchView(APIView):
-#     def get(self, request):
-#         city_code = request.query_params.get('city_code')
-#         radius = request.query_params.get('radius', 5)
-#         radiusUnit = request.query_params.get('radiusUnit', 'KM')
-#         amenities = request.query_params.get('amenities', [])
-#         ratings = request.query_params.get('ratings')
-#         # latitude = request.query_params.get('latitude')
-#         # longitude = request.query_params.get('longitude')
-
-#         print(city_code, radius, radiusUnit, amenities, ratings)
-
-#         if not city_code:
-#             return Response({'error': 'City Code is required.'}, status=status.HTTP_400_BAD_REQUEST)
-
-#         if not radius:
-#             radius = 5
-#         if not radiusUnit:
-#             radiusUnit = 'KM'
-#         if not amenities:
-#             amenities = []
-
-        
-        
-#         hotels = search_hotels_by_city(city_code, radius, radiusUnit, amenities, ratings)
-#         if "error" in hotels:
-#             return Response({"error": hotels["error"]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-#         return Response(hotels, status=status.HTTP_200_OK)
-
-
-# class HotelSearchByGeocodeView(APIView):
-#     def get(self, request):
-#         latitude = request.query_params.get('latitude')
-#         longitude = request.query_params.get('longitude')
-#         radius = request.query_params.get('radius', 5)
-#         radiusUnit = request.query_params.get('radiusUnit', 'KM')
-#         amenities = request.query_params.get('amenities', [])
-#         ratings = request.query_params.get('ratings')
-
-
-#         print(latitude, longitude, radius, radiusUnit, amenities, ratings)
-
-#         if not latitude or not longitude:
-#             return Response({'error': 'Latitude and Longitude are required.'}, status=status.HTTP_400_BAD_REQUEST)
-
-#         if not radius:
-#             radius = 5
-#         if not radiusUnit:
-#             radiusUnit = 'KM'
-#         if not amenities:
-#             amenities = []
-
-        
-#         hotels = search_hotels_by_geocode(latitude, longitude, radius, radiusUnit, amenities, ratings)
-#         if "error" in hotels:
-#             return Response({"error": hotels["error"]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-#         return Response(hotels, status=status.HTTP_200_OK)
-
-
-
-
-
-# class HotelDetailsView(APIView):
-#     def get(self, request):
-#         hotel_id = request.query_params.get('hotel_id')
-#         if not hotel_id:
-#             return Response({'error': 'Hotel ID is required.'}, status=status.HTTP_400_BAD_REQUEST)
-
-#         hotel = search_hotels_by_id(hotel_id)
-#         if "error" in hotel:
-#             return Response({"error": hotel["error"]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
-#         return Response(hotel, status=status.HTTP_200_OK)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

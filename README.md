@@ -223,6 +223,8 @@ If the root password have empty
 
 - POST : http://localhost:8000/hotels/search/
 
+- GET : http://localhost:8000/hotels-details (Not Used in FrontEnd)
+
 - GET : http://localhost:8000/bookmarks/
 
 - GET : http://localhost:8000/bookmarks/search/
@@ -230,6 +232,8 @@ If the root password have empty
 - POST : http://localhost:8000/bookmarks/
 
 - DELETE : http://localhost:8000/bookmarks/
+
+
 
 
 
